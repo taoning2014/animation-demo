@@ -1,0 +1,15 @@
+<h1>Thought Starters</h1>
+
+<div class='container'>
+  {{#each this.thoughtStarters as |item index|}}
+    <div
+      class='box'
+      {{animation-on-removal
+        shouldRemove=(eq index this.indexToRemove)
+        removeTS=this.removeTS
+      }}
+    >{{item.title}}
+      <button {{on 'click' (fn this.setRemoveTSIndex index)}}>Remove</button>
+    </div>
+  {{/each}}
+</div>
